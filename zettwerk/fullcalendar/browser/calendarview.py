@@ -8,6 +8,7 @@ from simplejson.encoder import JSONEncoder
 
 from zettwerk.fullcalendar import fullcalendarMessageFactory as _
 
+
 class ICalendarView(Interface):
     """
     calendar view interface
@@ -30,23 +31,25 @@ class ICalendarView(Interface):
 
     def _localizedMonthNamesShort():
         """ returns localized month names short"""
-        
+
     def _localizedNames():
-        """ return localized strings """        
+        """ return localized strings """
+
 
 class CalendarView(BrowserView):
     """
-    calendar browser view
+    calendar browser view that shows the calendar
     """
+
     implements(ICalendarView)
 
     def __init__(self, context, request):
         self.context = context
         self.request = request
-        
+
     @property
     def portal_translation(self):
-        return getToolByName(self.context, 'translation_service')        
+        return getToolByName(self.context, 'translation_service')
 
     @property
     def portal(self):
@@ -54,48 +57,65 @@ class CalendarView(BrowserView):
 
     def _localizedWeekdays(self):
         """ returns localized weekdays """
-        ret = []        
+        ret = []
+        trans = self.portal_translation.translate
         for i in range(7):
-            ret.append(self.portal_translation.translate(self.portal_translation.day_msgid(i), domain='plonelocales', context=self.context.REQUEST))        
-        return ret    
+            ret.append(trans(self.portal_translation.day_msgid(i),
+                             domain='plonelocales',
+                             context=self.context.REQUEST))
+        return ret
 
     def _localizedWeekdaysShort(self):
         """ returns localized weekdays short"""
-        ret = []        
+        ret = []
+        trans = self.portal_translation.translate
         for i in range(7):
-            ret.append(self.portal_translation.translate(self.portal_translation.day_msgid(i, 's'), domain='plonelocales', context=self.context.REQUEST))        
-        return ret  
+            ret.append(trans(self.portal_translation.day_msgid(i, 's'),
+                             domain='plonelocales',
+                             context=self.context.REQUEST))
+        return ret
 
     def _localizedMonthNames(self):
         """ returns localized month names """
-        ret = []        
-        for i in range(1,13):
-            ret.append(self.portal_translation.translate(self.portal_translation.month_msgid(i), domain='plonelocales', context=self.context.REQUEST))        
-        return ret  
+        ret = []
+        trans = self.portal_translation.translate
+        for i in range(1, 13):
+            ret.append(trans(self.portal_translation.month_msgid(i),
+                             domain='plonelocales',
+                             context=self.context.REQUEST))
+        return ret
 
     def _localizedMonthNamesShort(self):
         """ returns localized month names short"""
-        ret = []        
-        for i in range(1,13):
-            ret.append(self.portal_translation.translate(self.portal_translation.month_msgid(i, 'a'), domain='plonelocales', context=self.context.REQUEST))        
+        ret = []
+        trans = self.portal_translation.translate
+        for i in range(1, 13):
+            ret.append(trans(self.portal_translation.month_msgid(i, 'a'),
+                             domain='plonelocales',
+                             context=self.context.REQUEST))
         return ret
 
     def _localizedNames(self):
         """ return localized strings """
-        return {'localizedAllDay' : translate(_(u'All day'), context=self.request),
-                'localizedToday' : translate(_(u'Today'), context=self.request),
-                'localizedDay' : translate(_(u'Day'), context=self.request),
-                'localizedWeek' : translate(_(u'Week'), context=self.request),
-                'localizedMonth' : translate(_(u'Month'), context=self.request),
+        return {'localizedAllDay': translate(_(u'All day'),
+                                             context=self.request),
+                'localizedToday': translate(_(u'Today'),
+                                            context=self.request),
+                'localizedDay': translate(_(u'Day'),
+                                          context=self.request),
+                'localizedWeek': translate(_(u'Week'),
+                                           context=self.request),
+                'localizedMonth': translate(_(u'Month'),
+                                            context=self.request),
                }
 
     def _encodeJSON(self, data):
         """ takes whats given and jsonfies it """
-        return JSONEncoder().encode(data)  
+        return JSONEncoder().encode(data)
 
     def getDefaultOptions(self):
         """ build fullcalendar options dict var defaultCalendarOptions = {} """
-        namesDict = self._localizedNames()        
+        namesDict = self._localizedNames()
 
         uiEnabled = False
         try:
