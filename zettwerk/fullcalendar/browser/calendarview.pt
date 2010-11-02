@@ -5,7 +5,6 @@
 
   <metal:javascriptslot fill-slot="javascript_head_slot">
     <script type="text/javascript" tal:content="structure python: 'var defaultCalendarOptions='+view.getDefaultOptions()" />
-    <script type="text/javascript">$(document).ready(function(){$('#calendar').fullCalendar(defaultCalendarOptions);});</script>
   </metal:javascriptslot>
 
 <body>
