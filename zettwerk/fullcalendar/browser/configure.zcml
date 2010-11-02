@@ -11,6 +11,11 @@
       directory="fullcalendar"
       />
 
+  <browser:resourceDirectory
+      name="zettwerk.fullcalendar"
+      directory="javascript"
+      />
+
   <!-- Resource directory for stylesheets -->
   <browser:resourceDirectory
       name="zettwerk.fullcalendar.stylesheets"
