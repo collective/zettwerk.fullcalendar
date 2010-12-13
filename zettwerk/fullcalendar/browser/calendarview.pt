@@ -12,7 +12,7 @@
   <metal:content-core fill-slot="content-core">
       <metal:content-core define-macro="content-core">
           
-          <div id="calendar"> </div>
+          <div id="jquery-fullcalendar"> </div>
       
       </metal:content-core>
   </metal:content-core>    

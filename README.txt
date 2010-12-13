@@ -29,3 +29,11 @@ Note
 ====
 
 zettwerk.fullcalendar is out of the box ready to use zettwerk.ui to apply jquery.ui's css to the calendar view. There is only one problem with the ordering of the registered css in plone's portal_css (registry): if you installed zettwerk.ui after zettwerk.fullcalendar make sure to move the resource with id "++resource++jquery.fullcalendar/fullcalendar.css" to the bottom of all registered css files. You can do this by switching to the ZMI of you plone instance - click portal_css - search the id given above und use the arrows to move it down. At the end click "save".
+
+Changelog
+=========
+
+2010-12-13 (jensens)
+    - added some svn:ignores
+    - updated fullcalendar to official 1.4.9
+    - make div id to bind on more unique and remove superfluos try

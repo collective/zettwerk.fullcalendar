@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.1'
+version = '0.1.2'
 
 setup(name='zettwerk.fullcalendar',
       version=version,
@@ -34,6 +34,4 @@ setup(name='zettwerk.fullcalendar',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )
