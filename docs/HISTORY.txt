@@ -1,6 +1,16 @@
 Changelog
 =========
 
+Changelog
+=========
+
+0.1.2 (unreleased)
+------------------
+
+- added some svn:ignores
+- updated fullcalendar to official 1.4.9
+- make div id to bind on more unique and remove superfluos try in js
+
 0.1.1 (2010-11-02)
 ------------------
 
