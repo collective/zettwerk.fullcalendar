@@ -1,3 +1,5 @@
+var defaultCalendarOptions = null;
 $(document).ready(function() {
-    $('#jquery-fullcalendar').fullCalendar(defaultCalendarOptions);
+    if (defaultCalendarOptions !== null)
+	$('#jquery-fullcalendar').fullCalendar(defaultCalendarOptions);
 });
