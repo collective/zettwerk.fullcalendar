@@ -4,9 +4,10 @@ Changelog
 0.1.2 (2010-12-15)
 ------------------
 
-- added some svn:ignores
-- updated fullcalendar to official 1.4.9
-- make div id to bind on more unique and remove superfluos try in js
+- avoid javascript errors on the other views [jkubaile]
+- added some svn:ignores [jensens]
+- updated fullcalendar to official 1.4.9 [jensens]
+- make div id to bind on more unique and remove superfluos try in js [jensens]
 
 0.1.1 (2010-11-02)
 ------------------
