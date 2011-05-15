@@ -32,13 +32,22 @@
       allowed_interface=".calendarview.ICalendarView"
       permission="zope.Public"
       />
-      
+
+  <browser:page
+      for="*"
+      name="fullcalendar_preview_view"
+      class=".calendar_preview_view.CalendarPreviewView"
+      template="calendar_preview_view.pt"
+      allowed_interface=".calendar_preview_view.ICalendarPreviewView"
+      permission="zope.Public"
+      />
+
   <browser:page
       for="*"
       name="events_view"
       class=".eventsview.EventsView"
       allowed_interface=".calendarview.ICalendarView"
       permission="zope.Public"
-      />      
+      />
 
 </configure>

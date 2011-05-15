@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zettwerk.fullcalendar\n"
-"POT-Creation-Date: 2010-06-18 13:16+0000\n"
+"POT-Creation-Date: 2011-05-15 07:45+0000\n"
 "PO-Revision-Date: 2010-06-08 15:00+0000\n"
 "Last-Translator: Joerg Kubaile <jk@zettwerk.com>\n"
 "Language-Team: zettwerk <team@zettwerk.com>\n"
@@ -14,28 +14,27 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: zettwerk.fullcalendar\n"
 
-#: ../browser/calendarview.py:99
+#: ./../browser/calendar_preview_view.py:23
+msgid "(Preview)"
+msgstr ""
+
+#: ./../browser/calendarview.py:101
 msgid "All day"
 msgstr "All day"
 
-#: ../browser/calendarview.py:101
+#: ./../browser/calendarview.py:105
 msgid "Day"
 msgstr "Day"
 
-#: ../browser/calendarview.py:103
+#: ./../browser/calendarview.py:109
 msgid "Month"
 msgstr "Month"
 
-#: ../browser/calendarview.py:100
+#: ./../browser/calendarview.py:103
 msgid "Today"
 msgstr "Today"
 
-#: ../browser/calendarview.py:102
+#: ./../browser/calendarview.py:107
 msgid "Week"
 msgstr "Week"
-
-#. Default: "Javacript needed, sorry."
-#: ../browser/calendarview.pt:12
-msgid "no_javascript_found"
-msgstr "No javascript found"
 

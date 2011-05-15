@@ -17,3 +17,6 @@ msgstr ""
 
 msgid "fullcalendar_view"
 msgstr "Kalender"
+
+msgid "fullcalendar_preview_view"
+msgstr "Kalender (mit Vorschau)"

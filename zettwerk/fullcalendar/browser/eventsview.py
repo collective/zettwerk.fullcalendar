@@ -66,7 +66,6 @@ class EventsView(BrowserView):
         elif IATTopic.providedBy(self.context) \
                 and self.context.buildQuery() is not None:
             query_func = self.context.queryCatalog
-
         query = {'object_provides': ICalendarSupport.__identifier__}
         if start:
             query['start'] = {'query': DateTime(int(start)), 'range': 'min'}
