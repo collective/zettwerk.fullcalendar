@@ -4,8 +4,9 @@ Changelog
 0.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- replaced $ with jq to make ie work for authenticated users
+- added another view with overlay preview (reinstall via quickinstaller required)
+- updated fullcalendar to 1.5.1
 
 0.1.2 (2010-12-15)
 ------------------
