@@ -46,6 +46,7 @@ class CalendarView(BrowserView):
     def __init__(self, context, request):
         self.context = context
         self.request = request
+        self.preview = ''
 
     @property
     def portal_translation(self):
@@ -124,37 +125,39 @@ class CalendarView(BrowserView):
         except AttributeError:
             pass
 
-        defaultCalendarOptions = {'theme': uiEnabled,
-                                  'header': {'left': 'prev,next,today',
-                                             'center': 'title',
-                                             'right': 'month,agendaWeek,agendaDay'
-                                             },
-                                  'events': self.context.absolute_url()+'/events_view',
-                                  'allDayText' : namesDict['localizedAllDay'],
-                                  'monthNames' : self._localizedMonthNames(),
-                                  'monthNamesShort' : self._localizedMonthNamesShort(),
-                                  'dayNames' : self._localizedWeekdays(),
-                                  'dayNamesShort' : self._localizedWeekdaysShort(),
-                                  'titleFormat' : {'month': 'MMMM yyyy',
-                                                   'week': "d.[ MMMM][ yyyy]{ - d. MMMM yyyy}",
-                                                   'day': 'dddd, d. MMMM yyyy',
-                                                   },
-                                  'columnFormat' : {'month': 'dddd',
-                                                    'week': 'dddd',
-                                                    'day': ''
-                                                    },  
-                                  'axisFormat' : 'H:mm',  
-                                  'timeFormat' : {'': 'H:mm',
-                                                  'agenda': 'H:mm{ - H:mm}'},
-                                  'firstDay' : 1,
-                                  'buttonText' : {'prev': '&nbsp;&#9668;&nbsp;',
-                                                  'next': '&nbsp;&#9658;&nbsp;',
-                                                  'prevYear': '&nbsp;&lt;&lt;&nbsp;',
-                                                  'nextYear': '&nbsp;&gt;&gt;&nbsp;',
-                                                  'today': namesDict['localizedToday'],
-                                                  'month': namesDict['localizedMonth'],
-                                                  'week': namesDict['localizedWeek'],
-                                                  'day': namesDict['localizedDay']
-                                                  },
-                                  }
+        defaultCalendarOptions = {
+            'preview': self.preview,  # this is not a fullcalendar option!
+            'theme': uiEnabled,
+            'header': {'left': 'prev,next,today',
+                       'center': 'title',
+                       'right': 'month,agendaWeek,agendaDay'
+                       },
+            'events': self.context.absolute_url() + '/events_view',
+            'allDayText' : namesDict['localizedAllDay'],
+            'monthNames' : self._localizedMonthNames(),
+            'monthNamesShort' : self._localizedMonthNamesShort(),
+            'dayNames' : self._localizedWeekdays(),
+            'dayNamesShort' : self._localizedWeekdaysShort(),
+            'titleFormat' : {'month': 'MMMM yyyy',
+                             'week': "d.[ MMMM][ yyyy]{ - d. MMMM yyyy}",
+                             'day': 'dddd, d. MMMM yyyy',
+                             },
+            'columnFormat' : {'month': 'dddd',
+                              'week': 'dddd',
+                              'day': ''
+                              },
+            'axisFormat' : 'H:mm',
+            'timeFormat' : {'': 'H:mm',
+                            'agenda': 'H:mm{ - H:mm}'},
+            'firstDay' : 1,
+            'buttonText' : {'prev': '&nbsp;&#9668;&nbsp;',
+                            'next': '&nbsp;&#9658;&nbsp;',
+                            'prevYear': '&nbsp;&lt;&lt;&nbsp;',
+                            'nextYear': '&nbsp;&gt;&gt;&nbsp;',
+                            'today': namesDict['localizedToday'],
+                            'month': namesDict['localizedMonth'],
+                            'week': namesDict['localizedWeek'],
+                            'day': namesDict['localizedDay']
+                            },
+            }
         return self._encodeJSON(defaultCalendarOptions)
