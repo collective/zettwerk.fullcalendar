@@ -11,12 +11,11 @@ jq(document).ready(function() {
 });
 
 var addPreviewText = function(event, element) {
-    element.find('a').each(function() {
-	var preview = '<a href="'+jq(this).attr('href')+'"><span class="preview">' + defaultCalendarOptions.preview + '</span></a>';
-	jq(this).html(jq(this).html() + preview);
-	jq(this).find('a').prepOverlay({
-            subtype: 'ajax',
-            filter: '#content > *'
-	});
+    console.log(element);
+    var preview = ' <a class="fc-event-title" href="'+element.attr('href')+'"><span>' + defaultCalendarOptions.preview + '</span></a>';
+    jq(preview).appendTo(element.find('div'));
+    element.find('a').prepOverlay({
+        subtype: 'ajax',
+        filter: '#content > *'
     });
 };
