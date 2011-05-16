@@ -11,7 +11,6 @@ jq(document).ready(function() {
 });
 
 var addPreviewText = function(event, element) {
-    console.log(element);
     var preview = ' <a class="fc-event-title" href="'+element.attr('href')+'"><span>' + defaultCalendarOptions.preview + '</span></a>';
     jq(preview).appendTo(element.find('div'));
     element.find('a').prepOverlay({
