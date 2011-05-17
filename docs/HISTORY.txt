@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.0 (unreleased)
+0.2.0 (2011-05-17)
 ------------------
 
 - replaced $ with jq to make ie work for authenticated users
