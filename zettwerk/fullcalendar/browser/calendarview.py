@@ -136,7 +136,7 @@ class CalendarView(BrowserView):
             localTimeOnlyFormat = self.site_properties.localTimeOnlyFormat
         except AttributeError:
             localTimeOnlyFormat = "%H:%M"
-        fullCalendarTimeOnlyFormat = localTimeOnlyFormat.replace('%H', 'H').replace('%M', 'mm').replace('%I', 'h').replace('%p', 'tt').replace('%S', 'ss')
+        fullCalendarTimeOnlyFormat = localTimeOnlyFormat.replace('%H', 'H').replace('%M', 'mm').replace('%I', 'h').replace('%p', "t.'m'.").replace('%S', 'ss')
 
         defaultCalendarOptions = {
             'preview': self.preview,  # this is not a fullcalendar option!
