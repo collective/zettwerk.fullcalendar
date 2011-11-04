@@ -53,6 +53,10 @@ class CalendarView(BrowserView):
         return getToolByName(self.context, 'translation_service')
 
     @property
+    def site_properties(self):
+        return getToolByName(self.context, 'portal_properties').site_properties
+
+    @property
     def portal(self):
         return getToolByName(self.context, 'portal_url').getPortalObject()
 
@@ -125,6 +129,15 @@ class CalendarView(BrowserView):
         except AttributeError:
             pass
 
+        # Get the localTimeOnlyFormat from the Plone site properties, but default to 24h time if not found
+        # Then, convert it to the format that fullcalendar is expecting
+        # This strikes me as being hacky, but seems to work well.
+        try:
+            localTimeOnlyFormat = self.site_properties.localTimeOnlyFormat
+        except AttributeError:
+            localTimeOnlyFormat = "%H:%M"
+        fullCalendarTimeOnlyFormat = localTimeOnlyFormat.replace('%H', 'H').replace('%M', 'mm').replace('%I', 'h').replace('%p', 'tt').replace('%S', 'ss')
+
         defaultCalendarOptions = {
             'preview': self.preview,  # this is not a fullcalendar option!
             'theme': uiEnabled,
@@ -146,9 +159,9 @@ class CalendarView(BrowserView):
                               'week': 'dddd',
                               'day': ''
                               },
-            'axisFormat' : 'H:mm',
-            'timeFormat' : {'': 'H:mm',
-                            'agenda': 'H:mm{ - H:mm}'},
+            'axisFormat' : fullCalendarTimeOnlyFormat,
+            'timeFormat' : {'': fullCalendarTimeOnlyFormat,
+                            'agenda': '%s{ - %s}' % (fullCalendarTimeOnlyFormat, fullCalendarTimeOnlyFormat)},
             'firstDay' : 1,
             'buttonText' : {'prev': '&nbsp;&#9668;&nbsp;',
                             'next': '&nbsp;&#9658;&nbsp;',
