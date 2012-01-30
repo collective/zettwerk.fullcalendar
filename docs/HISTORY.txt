@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.2.1 (unreleased)
+------------------
+
+- added Finnish locales [pingviini].
+
 0.2.0 (2011-05-17)
 ------------------
 
