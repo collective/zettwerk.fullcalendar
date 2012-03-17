@@ -4,7 +4,10 @@ Changelog
 0.2.1 (unreleased)
 ------------------
 
-- pep8-ify
+- Changed date transfer format (#1)
+- updated fullcalendar to offical 1.5.3 [jkubaile]
+- fixed preview link display
+- pep8-ify [jkubaile]
 - added Finnish locales [pingviini].
 - bulgarian translation [vlado]
 - zettwerk.fullcalendar will now pull the Plone site's preferred time format from portal_properties and use it when displaying dates. [fvox13]

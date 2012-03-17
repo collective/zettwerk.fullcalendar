@@ -89,8 +89,8 @@ class EventsView(BrowserView):
             if brain.start == brain.end:
                 allDay = True
             jdict = {'title': brain.Title,
-                     'start': str(brain.start),
-                     'end': str(brain.end),
+                     'start': brain.start.ISO(),
+                     'end': brain.end.ISO(),
                      'allDay': allDay,
                      'url': brain.getURL()}
         return jdict
