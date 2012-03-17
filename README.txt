@@ -15,6 +15,11 @@ If you have developed you own event type it will be displayed as long as it impl
 An Event will be 'all-day' if the starttime hour and minutes were left empty when the event was created.
 All displayed events link to the corresponding object.
 
+Time-Format
+===========
+
+Beginning with version 0.2.1 zettwerk.fullcalendar uses Plone site's preferred time format. It defaults to display a.m./p.m. which might not be so common in european contries. To change it, switch to the ZMI and click the portal_properties object. Then look for the site_properties and open it. Change the field 'localTimeOnlyFormat' to something more common like %H:%M.
+
 Installation
 ============
 
