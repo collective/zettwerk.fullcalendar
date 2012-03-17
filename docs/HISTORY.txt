@@ -1,18 +1,18 @@
 Changelog
 =========
 
-0.2.1 (unreleased)
+0.2.1 (2012-03-17)
 ------------------
 
-- Changed date transfer format (#1)
+- Changed date transfer format (#1) [jkubaile]
 - updated fullcalendar to offical 1.5.3 [jkubaile]
-- fixed preview link display
+- fixed preview link display [jkubaile]
 - pep8-ify [jkubaile]
 - added Finnish locales [pingviini].
 - bulgarian translation [vlado]
 - zettwerk.fullcalendar will now pull the Plone site's preferred time format from portal_properties and use it when displaying dates. [fvox13]
 - Changing am and pm to a.m. and p.m. so as to comply with the Associated Press Stylebook, Microsoft Manual of Style, Chicago Manual of Style, Gregg Reference Manual... [fvox13]
-- added Notes about portal_properties usage in readme [jkubaile]
+- added notes about portal_properties usage in readme [jkubaile]
 
 0.2.0 (2011-05-17)
 ------------------
