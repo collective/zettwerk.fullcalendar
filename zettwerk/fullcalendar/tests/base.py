@@ -49,6 +49,7 @@ class TestCase(ptc.PloneTestCase):
     applies to unit test cases.
     """
 
+
 class FunctionalTestCase(ptc.FunctionalTestCase):
     """We use this class for functional integration tests that use
     doctest syntax. Again, we can put basic common utility or setup

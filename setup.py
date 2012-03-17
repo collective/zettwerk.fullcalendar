@@ -28,6 +28,9 @@ setup(name='zettwerk.fullcalendar',
           'simplejson',
           # -*- Extra requirements: -*-
       ],
+      extras_require={
+        'test': ['Products.PloneTestCase']
+        },
       entry_points="""
       # -*- Entry points: -*-
 

@@ -129,14 +129,19 @@ class CalendarView(BrowserView):
         except AttributeError:
             pass
 
-        # Get the localTimeOnlyFormat from the Plone site properties, but default to 24h time if not found
+        # Get the localTimeOnlyFormat from the Plone site properties,
+        # but default to 24h time if not found
         # Then, convert it to the format that fullcalendar is expecting
         # This strikes me as being hacky, but seems to work well.
         try:
             localTimeOnlyFormat = self.site_properties.localTimeOnlyFormat
         except AttributeError:
             localTimeOnlyFormat = "%H:%M"
-        fullCalendarTimeOnlyFormat = localTimeOnlyFormat.replace('%H', 'H').replace('%M', 'mm').replace('%I', 'h').replace('%p', "t.'m'.").replace('%S', 'ss')
+        fullCalendarTimeOnlyFormat = localTimeOnlyFormat.replace('%H', 'H') \
+            .replace('%M', 'mm') \
+            .replace('%I', 'h') \
+            .replace('%p', "t.'m'.") \
+            .replace('%S', 'ss')
 
         defaultCalendarOptions = {
             'preview': self.preview,  # this is not a fullcalendar option!
@@ -146,31 +151,34 @@ class CalendarView(BrowserView):
                        'right': 'month,agendaWeek,agendaDay'
                        },
             'events': self.context.absolute_url() + '/events_view',
-            'allDayText' : namesDict['localizedAllDay'],
-            'monthNames' : self._localizedMonthNames(),
-            'monthNamesShort' : self._localizedMonthNamesShort(),
-            'dayNames' : self._localizedWeekdays(),
-            'dayNamesShort' : self._localizedWeekdaysShort(),
-            'titleFormat' : {'month': 'MMMM yyyy',
-                             'week': "d.[ MMMM][ yyyy]{ - d. MMMM yyyy}",
-                             'day': 'dddd, d. MMMM yyyy',
-                             },
-            'columnFormat' : {'month': 'dddd',
-                              'week': 'dddd',
-                              'day': ''
-                              },
-            'axisFormat' : fullCalendarTimeOnlyFormat,
-            'timeFormat' : {'': fullCalendarTimeOnlyFormat,
-                            'agenda': '%s{ - %s}' % (fullCalendarTimeOnlyFormat, fullCalendarTimeOnlyFormat)},
-            'firstDay' : 1,
-            'buttonText' : {'prev': '&nbsp;&#9668;&nbsp;',
-                            'next': '&nbsp;&#9658;&nbsp;',
-                            'prevYear': '&nbsp;&lt;&lt;&nbsp;',
-                            'nextYear': '&nbsp;&gt;&gt;&nbsp;',
-                            'today': namesDict['localizedToday'],
-                            'month': namesDict['localizedMonth'],
-                            'week': namesDict['localizedWeek'],
-                            'day': namesDict['localizedDay']
+            'allDayText': namesDict['localizedAllDay'],
+            'monthNames': self._localizedMonthNames(),
+            'monthNamesShort': self._localizedMonthNamesShort(),
+            'dayNames': self._localizedWeekdays(),
+            'dayNamesShort': self._localizedWeekdaysShort(),
+            'titleFormat': {'month': 'MMMM yyyy',
+                            'week': "d.[ MMMM][ yyyy]{ - d. MMMM yyyy}",
+                            'day': 'dddd, d. MMMM yyyy',
                             },
+            'columnFormat': {'month': 'dddd',
+                             'week': 'dddd',
+                             'day': ''
+                             },
+            'axisFormat': fullCalendarTimeOnlyFormat,
+            'timeFormat':
+                {'': fullCalendarTimeOnlyFormat,
+                 'agenda': '%s{ - %s}' % (fullCalendarTimeOnlyFormat,
+                                          fullCalendarTimeOnlyFormat)},
+            'firstDay': 1,
+            'buttonText': {'prev': '&nbsp;&#9668;&nbsp;',
+                           'next': '&nbsp;&#9658;&nbsp;',
+                           'prevYear': '&nbsp;&lt;&lt;&nbsp;',
+                           'nextYear': '&nbsp;&gt;&gt;&nbsp;',
+                           'today': namesDict['localizedToday'],
+                           'month': namesDict['localizedMonth'],
+                           'week': namesDict['localizedWeek'],
+                           'day': namesDict['localizedDay']
+                           },
             }
+
         return self._encodeJSON(defaultCalendarOptions)

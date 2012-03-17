@@ -13,8 +13,10 @@ from Products.CMFCore import utils
 
 fullcalendarMessageFactory = MessageFactory('zettwerk.fullcalendar')
 
-from AccessControl import allow_module 
+
+from AccessControl import allow_module
 allow_module('zettwerk.fullcalendar.browser.calendarview')
+
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
