@@ -11,8 +11,15 @@ jq(document).ready(function() {
 });
 
 var addPreviewText = function(event, element) {
-    var preview = ' <a class="fc-event-title" href="'+element.attr('href')+'"><span>' + defaultCalendarOptions.preview + '</span></a>';
-    jq(preview).appendTo(element.find('div'));
+    console.log(element);
+    var preview = '<a class="fc-event-title" href="'+element.attr('href')+'"><span>' + defaultCalendarOptions.preview + '</span></a>';
+    if (element.find('div.fc-event-head').length) {
+	// week and day view
+	jq(preview).appendTo(element.find('div.fc-event-head'));
+    } else {
+	// month view
+	jq(preview).appendTo(element.find('div'));
+    }
     element.find('a').prepOverlay({
         subtype: 'ajax',
         filter: '#content > *'
