@@ -4,5 +4,14 @@ Changelog
 1.1 (Unreleased)
 -------------------
 
+- Events now include a className which is the
+  combination of all Subjects it is tagged with,
+  giving designers some more to play with.
+  Class names are normalized using the standard plone
+  mechanism.
+  E.g. for an event Subject=['A subject', 'Subject 10!'] 
+  we add className="Subject_a-subject Subject_subject-10".
+  [tmog]
+
 - Add danish translation.
   [tmog]

@@ -4,6 +4,8 @@ from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
 
+from Products.CMFPlone.utils import normalizeString
+
 from Products.ATContentTypes.interface.interfaces import ICalendarSupport
 from Products.ATContentTypes.interface.topic import IATTopic
 from Products.ATContentTypes.interface.folder import IATFolder
@@ -92,5 +94,8 @@ class EventsView(BrowserView):
                      'start': brain.start.ISO(),
                      'end': brain.end.ISO(),
                      'allDay': allDay,
-                     'url': brain.getURL()}
+                     'url': brain.getURL(),
+                     'className': ' '.join(['Subject_'+normalizeString(s) \
+                                            for s in brain.Subject])
+            }
         return jdict
