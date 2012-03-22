@@ -50,4 +50,21 @@
       permission="zope.Public"
       />
 
+  <browser:menuItem
+      for="*"
+      menu="plone_displayviews"
+      title="Full calendar view"
+      action="@@fullcalendar_view"
+      description="Displays a calendar of events in this Folder or Topic."
+      />
+
+  <browser:menuItem
+      for="*"
+      menu="plone_displayviews"
+      title="Full calendar view with preview"
+      action="@@fullcalendar_preview_view"
+      description="Displays a calendar of events in this Folder or Topic. Events can be previewed in a popover."
+      />
+
+  
 </configure>

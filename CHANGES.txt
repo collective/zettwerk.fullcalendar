@@ -4,6 +4,10 @@ Changelog
 1.1 (Unreleased)
 -------------------
 
+- Add proper translateable view titles and
+  descriptions.
+  [tmog]
+
 - Events now include a className which is the
   combination of all Subjects it is tagged with,
   giving designers some more to play with.

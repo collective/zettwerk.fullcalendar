@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-03-21 15:28+0000\n"
+"POT-Creation-Date: 2012-03-22 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Thomas Clement Mogensen <tmog@headnet.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,26 @@ msgstr "Hele dagen"
 #: ./browser/calendarview.py:109
 msgid "Day"
 msgstr "Dag"
+
+#. Default: "Displays a calendar of events in this Folder or Topic."
+#: ./profiles/default/types/Topic.xml
+msgid "Displays a calendar of events in this Folder or Topic."
+msgstr "Viser en kalender med begivenhederne i denne Mappe eller Dynamiske liste."
+
+#. Default: "Displays a calendar of events in this Folder or Topic. Events can be previewed in a popover."
+#: ./profiles/default/types/Topic.xml
+msgid "Displays a calendar of events in this Folder or Topic. Events can be previewed in a popover."
+msgstr "Viser en kalender med begivenhederne i denne Mappe eller Dynamiske liste. Begivenheder kan åbnes i en forhåndsvisning."
+
+#. Default: "Full calendar view"
+#: ./profiles/default/types/Topic.xml
+msgid "Full calendar view"
+msgstr "Fuld kalendervisning"
+
+#. Default: "Full calendar view with preview"
+#: ./profiles/default/types/Topic.xml
+msgid "Full calendar view with preview"
+msgstr "Fuld kalendervisning med forhåndsvisning"
 
 #: ./browser/calendarview.py:113
 msgid "Month"

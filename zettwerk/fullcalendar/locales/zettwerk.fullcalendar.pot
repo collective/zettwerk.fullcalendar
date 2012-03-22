@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-03-21 15:28+0000\n"
+"POT-Creation-Date: 2012-03-22 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,26 @@ msgstr ""
 
 #: ./browser/calendarview.py:109
 msgid "Day"
+msgstr ""
+
+#. Default: "Displays a calendar of events in this Folder or Topic."
+#: ./profiles/default/types/Topic.xml
+msgid "Displays a calendar of events in this Folder or Topic."
+msgstr ""
+
+#. Default: "Displays a calendar of events in this Folder or Topic. Events can be previewed in a popover."
+#: ./profiles/default/types/Topic.xml
+msgid "Displays a calendar of events in this Folder or Topic. Events can be previewed in a popover."
+msgstr ""
+
+#. Default: "Full calendar view"
+#: ./profiles/default/types/Topic.xml
+msgid "Full calendar view"
+msgstr ""
+
+#. Default: "Full calendar view with preview"
+#: ./profiles/default/types/Topic.xml
+msgid "Full calendar view with preview"
 msgstr ""
 
 #: ./browser/calendarview.py:113
