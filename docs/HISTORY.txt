@@ -1,6 +1,26 @@
 Changelog
 =========
 
+0.2.2 (2012-09-21)
+------------------
+
+- Add proper translateable view titles and
+  descriptions.
+  [tmog]
+
+- Events now include a className which is the
+  combination of all Subjects it is tagged with,
+  giving designers some more to play with.
+  Class names are normalized using the standard plone
+  mechanism.
+  E.g. for an event Subject=['A subject', 'Subject 10!']
+  we add className="Subject_a-subject Subject_subject-10".
+  [tmog]
+
+- Add danish translation.
+  [tmog]
+
+
 0.2.1 (2012-03-17)
 ------------------
 
