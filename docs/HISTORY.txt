@@ -4,7 +4,8 @@ Changelog
 0.3.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Replaced jquery accessor (fixes Plone 4.3 compatibility) [jkubaile]
+- Updated fullcalendar to official 1.6.4 [jkubaile]
 
 
 0.2.2 (2012-09-21)
