@@ -17,7 +17,7 @@ class TestSetup(TestCase):
 
         self.portal.invokeFactory('Event', 'event1')
         self.portal.invokeFactory('Event', 'event2')
-        self.portal.invokeFactory('Topic', 'cal')
+        self.portal.invokeFactory('Collection', 'cal')
 
         self.cal = getattr(self.portal, 'cal')
         self.event1 = getattr(self.portal, 'event1')
@@ -26,7 +26,7 @@ class TestSetup(TestCase):
         self.calView = getMultiAdapter((self.cal, self.request),
                                        name='events_view')
 
-        self.cal.setTitle('Kalender Topic')
+        self.cal.setTitle('Kalender Collection')
         self.event1.setTitle('Testevent 1')
         self.event1.setStartDate(DateTime('2010/06/16 07:00:00 GMT+2'))
         self.event1.setEndDate(DateTime('2010/06/17 23:55:00 GMT+2'))
