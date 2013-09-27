@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.0 (unreleased)
+0.3.0 (2013-09-27)
 ------------------
 
 - Replaced jquery accessor (fixes Plone 4.3 compatibility) [jkubaile]
