@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="Topic" meta_type="Factory-based Type Information with dynamic views">
+<object name="Topic">
   <property name="view_methods" purge="False">
     <element remove="true" value="fullcalendar_view"/>
     <element remove="true" value="fullcalendar_preview_view"/>
