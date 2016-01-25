@@ -19,7 +19,13 @@
       description="Implementation of the jQuery Fullcalendar"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Zettwerk jQuery Fullcalendar Uninstall"
+      directory="profiles/uninstall"
+      description="Uninstall of the jQuery Fullcalendar"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />  
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
